@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GPSDK
 
 class ViewController: UIViewController {
 
