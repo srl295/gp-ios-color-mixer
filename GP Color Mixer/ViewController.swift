@@ -31,5 +31,7 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func mixButton(_ sender: Any) {
+    }
 }
 

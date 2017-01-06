@@ -40,6 +40,9 @@
                                 <rect key="frame" x="21" y="456" width="327" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Mix"/>
+                                <connections>
+                                    <action selector="mixButton:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Hb5-V2-tIX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mauve" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFV-Gr-OOk">
                                 <rect key="frame" x="15" y="514" width="338" height="71"/>
