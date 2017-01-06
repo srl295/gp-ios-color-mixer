@@ -43,13 +43,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return 3;
     }
     
+    var primaryColors = [ Color.red, Color.blue, Color.yellow ]
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch row {
-        case 0: return Color.red.simpleDescription()
-        case 1: return Color.blue.simpleDescription()
-        case 2: return Color.yellow.simpleDescription()
-        default: return Color.muddy.simpleDescription()
-        }
+        return primaryColors[row].simpleDescription()
     }
 }
 
