@@ -13,6 +13,7 @@
 		1C60C0DD1E1F271400FD7A2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C60C0DC1E1F271400FD7A2B /* Assets.xcassets */; };
 		1C60C0E01E1F271400FD7A2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C60C0DE1E1F271400FD7A2B /* LaunchScreen.storyboard */; };
 		1C60C0E91E1F2A0000FD7A2B /* GPSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C60C0E81E1F2A0000FD7A2B /* GPSDK.framework */; };
+		1C60C0EC1E201F4F00FD7A2B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C60C0EB1E201F4F00FD7A2B /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1C60C0DF1E1F271400FD7A2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C60C0E11E1F271400FD7A2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C60C0E81E1F2A0000FD7A2B /* GPSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPSDK.framework; path = Carthage/Build/iOS/GPSDK.framework; sourceTree = "<group>"; };
+		1C60C0EB1E201F4F00FD7A2B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1C60C0DC1E1F271400FD7A2B /* Assets.xcassets */,
 				1C60C0DE1E1F271400FD7A2B /* LaunchScreen.storyboard */,
 				1C60C0E11E1F271400FD7A2B /* Info.plist */,
+				1C60C0EB1E201F4F00FD7A2B /* Colors.swift */,
 			);
 			path = "GP Color Mixer";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C60C0D81E1F271400FD7A2B /* ViewController.swift in Sources */,
+				1C60C0EC1E201F4F00FD7A2B /* Colors.swift in Sources */,
 				1C60C0D61E1F271400FD7A2B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
