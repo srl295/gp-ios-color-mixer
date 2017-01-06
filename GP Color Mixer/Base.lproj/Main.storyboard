@@ -31,19 +31,19 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Kz-ay-hrc">
                                 <rect key="frame" x="16" y="70" width="332" height="191"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zHb-xV-cOP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hK3-tm-Nv3"/>
+                                </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v6e-PZ-7hh">
                                 <rect key="frame" x="21" y="238" width="332" height="191"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feQ-OL-3oe">
-                                <rect key="frame" x="21" y="456" width="327" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mix"/>
                                 <connections>
-                                    <action selector="mixButton:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Hb5-V2-tIX"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jH4-6d-FEz"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oZG-Ho-pYj"/>
                                 </connections>
-                            </button>
+                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mauve" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFV-Gr-OOk">
                                 <rect key="frame" x="15" y="514" width="338" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,13 +51,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAE-AE-7z0">
+                                <rect key="frame" x="21" y="437" width="338" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Mix"/>
+                                <connections>
+                                    <action selector="doMix:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rba-uI-SQR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="mixButton" destination="feQ-OL-3oe" id="cbW-8O-5JK"/>
-                        <outlet property="mixOne" destination="0Kz-ay-hrc" id="Ftm-PZ-6aB"/>
-                        <outlet property="mixTwo" destination="v6e-PZ-7hh" id="ZSD-uM-jya"/>
+                        <outlet property="mixButton" destination="zAE-AE-7z0" id="NaA-LX-S70"/>
+                        <outlet property="mixOne" destination="0Kz-ay-hrc" id="Im0-4N-GKv"/>
+                        <outlet property="mixTwo" destination="v6e-PZ-7hh" id="5jp-v3-oRA"/>
                         <outlet property="resultLabel" destination="pFV-Gr-OOk" id="wmt-y1-7y3"/>
                         <outlet property="titleLabel" destination="XpI-qU-oFk" id="0Qg-2b-Wcq"/>
                     </connections>
