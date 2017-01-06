@@ -51,6 +51,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="mixButton" destination="feQ-OL-3oe" id="cbW-8O-5JK"/>
+                        <outlet property="mixOne" destination="0Kz-ay-hrc" id="Ftm-PZ-6aB"/>
+                        <outlet property="mixTwo" destination="v6e-PZ-7hh" id="ZSD-uM-jya"/>
+                        <outlet property="resultLabel" destination="pFV-Gr-OOk" id="wmt-y1-7y3"/>
+                        <outlet property="titleLabel" destination="XpI-qU-oFk" id="0Qg-2b-Wcq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

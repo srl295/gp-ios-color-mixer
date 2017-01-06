@@ -11,9 +11,18 @@ import GPSDK
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var mixOne: UIPickerView!
+    @IBOutlet weak var mixTwo: UIPickerView!
+    @IBOutlet weak var mixButton: UIButton!
+    @IBOutlet weak var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Clear things up
+        resultLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
