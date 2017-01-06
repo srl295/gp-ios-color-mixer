@@ -26,7 +26,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     @IBAction func doMix(_ sender: Any) {
-        resultLabel.text = "MIXED!"
+        let color1 = primaryColors[mixOne.selectedRow(inComponent: 0)]
+        let color2 = primaryColors[mixTwo.selectedRow(inComponent: 0)]
+        
+        let newColor = color1.mix(with: color2)
+        
+        resultLabel.text = newColor.simpleDescription()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +48,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return 3;
     }
     
-    var primaryColors = [ Color.red, Color.blue, Color.yellow ]
+    let primaryColors = [ Color.red, Color.blue, Color.yellow ]
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return primaryColors[row].simpleDescription()
