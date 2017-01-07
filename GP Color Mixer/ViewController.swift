@@ -19,18 +19,52 @@ import GPSDK
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var mixOne: UIPickerView!
     @IBOutlet weak var mixTwo: UIPickerView!
     @IBOutlet weak var mixButton: UIButton!
     
+    let gp = GPService()
+
+    func get(key: String) -> String {
+        return gp.localizedString(key, nil)
+    }
+    
+    func get(color: Color) -> String {
+        return get(key: color.simpleDescription())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        // Clear things up
-        resultLabel.text = ""
+
+        resultLabel.text = "Loading…"
+        do {
+            try gp.initService(url:        ReaderCredentials.url,
+                                    instanceId: ReaderCredentials.instanceId,
+                                    bundleId:   ReaderCredentials.bundleId,
+                                    userId:     ReaderCredentials.userId,
+                                    password:   ReaderCredentials.password,
+                                    
+                                    languageId:nil,
+                                    alwaysLoadFromServer: false,
+                                    expireAfter: 0)
+            
+            // set up strings
+            titleLabel.text = get(key: "title")
+            mixButton.setTitle(get(key: "mix"), for: UIControlState.normal)
+            mixButton.titleLabel?.text = get(key: "mix")
+            resultLabel.text = "" // clear this
+        } catch GPService.GPError.languageNotSupported {
+            resultLabel.text = ("This language is not supported...")
+        } catch GPService.GPError.requestServerError(let errorDescription) {
+            resultLabel.text = ("Request server error: " + errorDescription)
+        } catch GPService.GPError.HTTPError(let statusCode) {
+            resultLabel.text = ("Request server error: HTTP \(statusCode)")
+        } catch {
+            resultLabel.text = ("Other error")
+        }
     }
 
     @IBAction func doMix(_ sender: Any) {
@@ -39,7 +73,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         let newColor = color1.mix(with: color2)
         
-        resultLabel.text = newColor.simpleDescription()
+        resultLabel.text = get(color: newColor)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +93,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let primaryColors = [ Color.red, Color.blue, Color.yellow ]
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return primaryColors[row].simpleDescription()
+        return get(color: primaryColors[row])
     }
 }
 
